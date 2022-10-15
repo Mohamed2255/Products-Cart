@@ -1,0 +1,18 @@
+<div class="item" >
+    <div>
+        <img src="{{data.image}}" alt="">
+        <div class="body">
+            <h4>{{data.title}}</h4>
+            <p>{{data.description}}</p>
+        </div>
+    </div>
+   
+    <div class="px-3 mb-2 d-flex justify-content-between align-datas-center ">
+        <button class="btn btn-success" (click)="btn=true" *ngIf="btn==false" >Add To Cart</button>
+        <div class="d-flex w-50 " *ngIf="btn">
+            <input type="number" class="form-control m-1" [(ngModel)]="amount" min="0">
+            <button class="btn btn-danger"  (click)="add();btn=false">Add</button>
+        </div>
+        <span>{{data.price}} L.E</span>
+    </div>
+</div>
